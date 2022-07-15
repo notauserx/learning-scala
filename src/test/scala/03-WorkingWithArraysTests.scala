@@ -1,5 +1,6 @@
 package WorkingWithArrays
 
+import scala.collection.mutable.ArrayBuffer
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest._
 import matchers.should._
@@ -34,5 +35,10 @@ class WorkingWithArraysTests extends AnyFunSuite with Matchers {
         ins.removeDups(Array(1,1,1,2,2,2)) should equal (Array(1,2))
     }
 
+    // test for ex 8
+
+    test("removeAllButTheFirstNegetive with (-1,1,-2,2,-3,0) returns (-1,1,2,0)") {
+        ins.removeAllButTheFirstNegetive(ArrayBuffer(-1,1,-2,2,-3,0)) should equal (ArrayBuffer(-1,1,2,0))
+    }
 
 }
