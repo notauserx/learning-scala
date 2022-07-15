@@ -21,4 +21,11 @@ class WorkingWithArraysTests extends AnyFunSuite with Matchers {
         prob should equal (Array(2,1))
 
     }
+
+    // test for ex 4
+
+    test("random array splits into positive and negetive") {
+        ins.splitPositiveAndNonPositive(Array(1,-1,2,3,4,-2,-3, 0, 56)) should equal (Array(1, 2, 3, 4, 56, -1, -2, -3, 0))
+    }
+
 }
