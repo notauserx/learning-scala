@@ -21,4 +21,11 @@ class WorkingWithArrays {
     */
 
     def splitPositiveAndNonPositive(a : Array[Int]) = a.filter(_ > 0) ++ a.filter(_ <= 0)
+
+    /* Ex 7
+        7. Write a code snippet that produces all values from an array with duplicates
+        removed. (Hint: Look at Scaladoc.)
+    */
+
+    def removeDups(a: Array[Int]) : Array[Int] = a.distinct
 }

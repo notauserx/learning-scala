@@ -28,4 +28,11 @@ class WorkingWithArraysTests extends AnyFunSuite with Matchers {
         ins.splitPositiveAndNonPositive(Array(1,-1,2,3,4,-2,-3, 0, 56)) should equal (Array(1, 2, 3, 4, 56, -1, -2, -3, 0))
     }
 
+    // test for ex 7
+
+    test("removeDups with   (1,1,1,2,2,2) returns (1,2)") {
+        ins.removeDups(Array(1,1,1,2,2,2)) should equal (Array(1,2))
+    }
+
+
 }
