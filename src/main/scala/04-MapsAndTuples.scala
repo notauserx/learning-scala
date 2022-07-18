@@ -45,6 +45,7 @@ class MapsAndTuples {
         for(item <- source) {
             if(wordCount.contains(item)) {
                 val newCount : Int = wordCount(item) + 1
+                // cannot get wordCount += (item ->  wordCount(item) + 1) to work
                 wordCount += (item ->  newCount)
             }
             else wordCount += (item -> 1)
