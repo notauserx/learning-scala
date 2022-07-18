@@ -1,5 +1,7 @@
 package MapsAndTuples
 
+import com.typesafe.config._
+
 class MapsAndTuples {
     def countWords() = {
         val wordCount : scala.collection.mutable.Map[String, Int] = scala.collection.mutable.Map()
@@ -10,6 +12,29 @@ class MapsAndTuples {
             if(wordCount.contains(item))
                 wordCount(item) += 1
             else wordCount(item) = 1
+        }
+        wordCount
+    }
+
+    def readFile() = {
+        val conf = ConfigFactory.load()
+
+        val fileName = conf.getString("app.mapsandtuplesFilePath")
+        val words = """([A-Za-z])+""".r
+        io.Source.fromFile(fileName)
+            .getLines
+            .flatMap(words.findAllIn)
+            .toList     
+    }
+
+
+    def countWords(source : List[String]) = {
+
+        val wordCount : scala.collection.mutable.Map[String, Int] = scala.collection.mutable.Map()
+        for(item <- source) {
+            if(wordCount.contains(item))
+                wordCount(item) += 1
+            else wordCount(item) = 1 
         }
         wordCount
     }
