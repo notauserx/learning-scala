@@ -28,6 +28,7 @@ class MapsAndTuples {
     }
 
 
+    // ex 2
     def countWords(source : List[String]) = {
 
         val wordCount : scala.collection.mutable.Map[String, Int] = scala.collection.mutable.Map()
@@ -39,6 +40,7 @@ class MapsAndTuples {
         wordCount
     }
 
+    // ex 3
     def countWordsWithImmutableMap(source: List[String]) = {
         var wordCount : Map[String, Int] = Map();
 
@@ -54,4 +56,5 @@ class MapsAndTuples {
 
 
     }
+    
 }
