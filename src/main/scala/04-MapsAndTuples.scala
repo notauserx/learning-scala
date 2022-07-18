@@ -56,5 +56,17 @@ class MapsAndTuples {
 
 
     }
-    
+
+    // ex 4
+    def countWordsWithSortedMap(source: List[String]) = {
+        var wordCount : scala.collection.mutable.SortedMap[String, Int] = scala.collection.mutable.SortedMap()
+
+        for(item <- source) {
+            if(wordCount.contains(item))
+                wordCount(item) += 1
+            else wordCount(item) = 1 
+        }
+        wordCount
+    }
+
 }

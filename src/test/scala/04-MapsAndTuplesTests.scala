@@ -26,4 +26,14 @@ class MapsAndTuplesTests extends AnyFunSuite with Matchers{
         freq should equal (Map("a" -> 2, "simple" -> 1, "test" -> 1, "for"-> 1, "map" -> 1))
     }
 
+    test("sorted map should capture sorted word frequencies") {
+        val words = "a"::"simple"::"test"::"for"::"a"::"map"::Nil
+
+        val freq = ins.countWordsWithImmutableMap(words);
+
+        print(freq)
+
+        freq should equal (Map("a" -> 2, "for"-> 1, "map" -> 1, "simple" -> 1, "test" -> 1))
+    }
+
 }
