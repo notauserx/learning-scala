@@ -18,4 +18,12 @@ class MapsAndTuplesTests extends AnyFunSuite with Matchers{
         freq should equal (Map("a" -> 2, "simple" -> 1, "test" -> 1, "for"-> 1, "map" -> 1))
     }
 
+    test("immutable map should capture word frequencies") {
+        val words = "a"::"simple"::"test"::"for"::"a"::"map"::Nil
+
+        val freq = ins.countWordsWithImmutableMap(words);
+
+        freq should equal (Map("a" -> 2, "simple" -> 1, "test" -> 1, "for"-> 1, "map" -> 1))
+    }
+
 }

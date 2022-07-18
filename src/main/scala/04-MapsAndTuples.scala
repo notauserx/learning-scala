@@ -38,4 +38,19 @@ class MapsAndTuples {
         }
         wordCount
     }
+
+    def countWordsWithImmutableMap(source: List[String]) = {
+        var wordCount : Map[String, Int] = Map();
+
+        for(item <- source) {
+            if(wordCount.contains(item)) {
+                val newCount : Int = wordCount(item) + 1
+                wordCount += (item ->  newCount)
+            }
+            else wordCount += (item -> 1)
+        }
+        wordCount
+
+
+    }
 }
