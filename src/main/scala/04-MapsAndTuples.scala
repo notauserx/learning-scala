@@ -69,4 +69,12 @@ class MapsAndTuples {
         wordCount
     }
 
+    def lteqgt(values: Array[Int], v: Int) = {
+        val equal = values.count(x => x == v)
+        val greater = values.count(x => x > v)
+        val lesser = values.count(x => x < v)
+
+        (lesser, equal, greater)
+    }
+
 }
